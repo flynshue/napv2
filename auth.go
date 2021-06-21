@@ -31,6 +31,6 @@ type AuthToken struct {
 	Token string
 }
 
-func (at AuthToken) AuthorizationToken() string {
+func (at AuthToken) AuthorizationHeader() string {
 	return fmt.Sprintf("token %s", at.Token)
 }
