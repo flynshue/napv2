@@ -22,6 +22,14 @@ func (a *API) AddResource(name string, resource RestResource) {
 	a.Resources[name] = resource
 }
 
+func (a *API) ListResources() []string {
+	resources := make([]string, 0, len(a.Resources))
+	for name := range a.Resources {
+		resources = append(resources, name)
+	}
+	return resources
+}
+
 func (a *API) SetAuth(auth Authentication) {
 	a.Client.SetAuth(auth)
 }
